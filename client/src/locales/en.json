@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "schemes": "Schemes",
+    "eligibility": "Eligibility Checker",
+    "profile": "Profile",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero_title": "Know Your Government Schemes",
+    "hero_subtitle": "Discover benefits you deserve, in your language",
+    "search_placeholder": "Search for schemes...",
+    "featured_title": "Featured Schemes",
+    "cta_eligibility": "Check Your Eligibility",
+    "stats_schemes": "1000+ Schemes",
+    "stats_languages": "3 Languages",
+    "stats_free": "Free to Use"
+  },
+  "about": {
+    "title": "About SchemeSaathi",
+    "mission": "Our Mission",
+    "mission_text": "SchemeSaathi bridges the gap between Indian citizens and government welfare schemes. We help you discover schemes you qualify for, understand them in your language, and guide you through the application process.",
+    "how_it_works": "How It Works",
+    "step1_title": "Search",
+    "step1_text": "Browse or search thousands of government schemes",
+    "step2_title": "Check Eligibility",
+    "step2_text": "Enter your details to find schemes you qualify for",
+    "step3_title": "Apply",
+    "step3_text": "Get guided to official application portals",
+    "credits_title": "Project Credits",
+    "credits_text": "Built with IBM watsonx.ai at a hackathon to empower Indian citizens with AI."
+  },
+  "services": {
+    "title": "Our Services",
+    "discovery_title": "Scheme Discovery",
+    "discovery_text": "Browse and search all government schemes across categories and states",
+    "eligibility_title": "Eligibility Checker",
+    "eligibility_text": "Find schemes you qualify for based on your profile",
+    "ai_title": "AI Assistant",
+    "ai_text": "Ask questions about any scheme in your language",
+    "multilingual_title": "Multilingual Support",
+    "multilingual_text": "Available in Hindi, English, and Telugu"
+  },
+  "privacy_note": "The personal information you provide is used ONLY to match you with relevant government schemes and is never shared with third parties.",
+  "bot": {
+    "title": "SchemeSaathi AI",
+    "placeholder": "Ask me about any government scheme...",
+    "send": "Send",
+    "powered_by": "Powered by IBM watsonx.ai",
+    "privacy": "Your data is only used for scheme retrieval"
+  },
+  "eligibility": {
+    "title": "Check Your Eligibility",
+    "privacy_banner": "Your information is used only to find matching schemes and is never stored or shared.",
+    "age": "Age",
+    "gender": "Gender",
+    "state": "State",
+    "income": "Annual Income (INR)",
+    "occupation": "Occupation",
+    "caste": "Caste Category",
+    "submit": "Check Eligibility",
+    "results_title": "Matching Schemes for You",
+    "no_results": "No matching schemes found. Try adjusting your criteria.",
+    "match_score": "Match Score"
+  },
+  "scheme": {
+    "apply_now": "Apply Now",
+    "save": "Save Scheme",
+    "saved": "Saved",
+    "documents": "Documents Required",
+    "benefits": "Benefits",
+    "eligibility": "Eligibility Criteria",
+    "category": "Category",
+    "state": "State",
+    "no_results": "No schemes found. Try different filters.",
+    "search_placeholder": "Search schemes..."
+  },
+  "auth": {
+    "login_title": "Welcome Back",
+    "register_title": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "login_btn": "Login",
+    "register_btn": "Register",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "register_link": "Register",
+    "login_link": "Login"
+  },
+  "profile": {
+    "title": "My Profile",
+    "save_btn": "Save Profile",
+    "saved_schemes": "Saved Schemes",
+    "no_saved": "No saved schemes yet.",
+    "age": "Age",
+    "gender": "Gender",
+    "state": "State",
+    "income": "Annual Income (INR)",
+    "occupation": "Occupation",
+    "caste": "Caste Category"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "back": "Back",
+    "view_details": "View Details"
+  }
+}

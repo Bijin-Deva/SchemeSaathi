@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1787160639929",
+    "name": "Bijin",
+    "email": "bijin@gmail.com",
+    "passwordHash": "$2a$10$uufhbhDWJsW43BbWvavyqeuzltTzpnyvKeAIxvud8RU6S42W6mLMO",
+    "age": "20",
+    "gender": "Male",
+    "state": "Andhra Pradesh",
+    "income": "0",
+    "occupation": "student",
+    "caste_category": "General",
+    "savedSchemes": []
+  },
+  {
+    "id": "1787374358353",
+    "name": "laha",
+    "email": "lahari@1234.com",
+    "passwordHash": "$2a$10$Mv8Yr4u1NGZHkg74l/udseWm.voKLT0bvRCO/x6ZzqDHLPkmazlJm",
+    "age": "21",
+    "gender": "Female",
+    "state": "Andhra Pradesh",
+    "income": "90000",
+    "occupation": "student",
+    "caste_category": "General",
+    "savedSchemes": []
+  }
+]
