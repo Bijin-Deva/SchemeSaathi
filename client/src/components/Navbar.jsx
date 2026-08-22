@@ -67,7 +67,7 @@ export default function Navbar() {
 
             {user ? (
               <>
-                <NavLink to="/profile" className={linkClass}>{t('nav.profile')}</NavLink>
+                <NavLink to="/profile" className={linkClass}>{user.name}</NavLink>
                 <button
                   onClick={handleLogout}
                   className="text-sm font-medium text-gray-700 hover:text-orange-500 transition-colors"

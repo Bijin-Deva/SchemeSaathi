@@ -24,5 +24,18 @@
     "occupation": "student",
     "caste_category": "General",
     "savedSchemes": []
+  },
+  {
+    "id": "1787419882701",
+    "name": "Bijin",
+    "email": "biji@12.com",
+    "passwordHash": "$2a$10$zWBcfWXRwNJ.upJdRcP8N.hPJKlkPVXHa.buJy4PzlOu1zJZEJ1n2",
+    "age": "22",
+    "gender": "Male",
+    "state": "Andhra Pradesh",
+    "income": "60000",
+    "occupation": "Student",
+    "caste_category": "General",
+    "savedSchemes": []
   }
 ]
