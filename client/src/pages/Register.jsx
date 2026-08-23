@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { ShieldCheck } from 'lucide-react';
 
 export default function Register() {
   const { t } = useTranslation();
@@ -56,7 +57,7 @@ export default function Register() {
 
         {/* Privacy Note */}
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 text-xs text-yellow-800 rounded-r-lg mt-5">
-          🔒 {t('privacy_note')}
+          <ShieldCheck size={15} /> {t('privacy_note')}
         </div>
 
         <p className="text-sm text-gray-500 text-center mt-4">

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import SchemeCard from '../components/SchemeCard';
+import { CheckCircle2, ShieldCheck } from 'lucide-react';
 
 const STATES = ['Andhra Pradesh', 'Telangana', 'Maharashtra', 'Karnataka', 'Tamil Nadu', 'Delhi', 'Uttar Pradesh', 'Rajasthan', 'Gujarat', 'West Bengal', 'Bihar', 'Madhya Pradesh', 'National'];
 const GENDERS = ['Male', 'Female', 'Other'];
@@ -50,7 +51,7 @@ export default function Profile() {
 
       {/* Privacy Note */}
       <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-800 rounded-r-lg mb-6">
-        🔒 {t('privacy_note')}
+        <ShieldCheck size={16} /> {t('privacy_note')}
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
@@ -104,7 +105,7 @@ export default function Profile() {
               className="bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white px-8 py-2.5 rounded-lg font-medium text-sm transition-colors">
               {saving ? t('common.loading') : t('profile.save_btn')}
             </button>
-            {success && <span className="text-green-600 text-sm font-medium">✓ Profile saved!</span>}
+            {success && <span className="text-green-600 text-sm font-medium success-message"><CheckCircle2 size={15} /> Profile saved!</span>}
           </div>
         </form>
       </div>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { Bot, CheckCircle2, Globe2, Search } from 'lucide-react';
 
 const services = [
-  { icon: '🔍', titleKey: 'services.discovery_title', textKey: 'services.discovery_text', path: '/schemes' },
-  { icon: '✅', titleKey: 'services.eligibility_title', textKey: 'services.eligibility_text', path: '/eligibility' },
-  { icon: '🤖', titleKey: 'services.ai_title', textKey: 'services.ai_text', path: null },
-  { icon: '🌐', titleKey: 'services.multilingual_title', textKey: 'services.multilingual_text', path: null },
+  { icon: Search, titleKey: 'services.discovery_title', textKey: 'services.discovery_text', path: '/schemes' },
+  { icon: CheckCircle2, titleKey: 'services.eligibility_title', textKey: 'services.eligibility_text', path: '/eligibility' },
+  { icon: Bot, titleKey: 'services.ai_title', textKey: 'services.ai_text', path: null },
+  { icon: Globe2, titleKey: 'services.multilingual_title', textKey: 'services.multilingual_text', path: null },
 ];
 
 export default function Services() {
@@ -26,7 +27,7 @@ export default function Services() {
             className={`bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition-shadow ${svc.path ? 'cursor-pointer' : ''}`}
             onClick={() => svc.path && navigate(svc.path)}
           >
-            <div className="text-4xl mb-4">{svc.icon}</div>
+            <div className="feature-icon mb-4"><svc.icon size={18} /></div>
             <h3 className="text-lg font-semibold text-gray-800 mb-2">{t(svc.titleKey)}</h3>
             <p className="text-sm text-gray-600 leading-relaxed">{t(svc.textKey)}</p>
           </div>

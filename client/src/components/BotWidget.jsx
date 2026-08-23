@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import api from '../services/api';
 import i18n from '../i18n';
 import { useAuth } from '../context/AuthContext';
+import { Bot, Maximize2, X } from 'lucide-react';
 
 const LANGUAGES = [
   { code: 'en', label: 'EN' },
@@ -225,7 +226,7 @@ export default function BotWidget() {
                 onMouseDown={onResizeMouseDown}
                 className="text-orange-200 text-xs cursor-nw-resize select-none"
                 title="Drag to resize"
-              >⤢</span>
+              ><Maximize2 size={14} /></span>
             </div>
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-0.5 bg-orange-600 rounded px-1 py-0.5">
@@ -248,7 +249,7 @@ export default function BotWidget() {
               <button
                 onClick={() => setOpen(false)}
                 className="text-white hover:text-orange-200 transition-colors text-lg leading-none"
-              >✕</button>
+              ><X size={16} /></button>
             </div>
           </div>
 
@@ -313,10 +314,10 @@ export default function BotWidget() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-14 h-14 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg flex items-center justify-center text-2xl transition-colors"
+        className="bot-toggle bg-orange-500 hover:bg-orange-600 text-white shadow-lg flex items-center justify-center transition-colors"
         aria-label="Open SchemeSaathi AI"
       >
-        {open ? '✕' : '🤖'}
+        {open ? <X size={22} /> : <Bot size={22} />}
       </button>
     </div>
   );

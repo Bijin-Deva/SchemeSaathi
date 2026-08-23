@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import SchemeCard from '../components/SchemeCard';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { ShieldCheck } from 'lucide-react';
 
 const STATES = ['Andhra Pradesh', 'Telangana', 'Maharashtra', 'Karnataka', 'Tamil Nadu', 'Delhi', 'Uttar Pradesh', 'Rajasthan', 'Gujarat', 'West Bengal', 'Bihar', 'Madhya Pradesh', 'National'];
 const GENDERS = ['Male', 'Female', 'Other'];
@@ -48,8 +49,8 @@ export default function EligibilityChecker() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Privacy banner */}
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-800 rounded-r-lg mb-6">
-        🔒 {t('eligibility.privacy_banner')}
+      <div className="privacy-banner bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-800 rounded-r-lg mb-6">
+        <ShieldCheck size={16} /> {t('eligibility.privacy_banner')}
       </div>
 
       <h1 className="text-2xl font-bold text-gray-900 mb-6">{t('eligibility.title')}</h1>

@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import i18n from '../i18n';
+import { Shield } from 'lucide-react';
 
 const LANGUAGES = [
   { code: 'en', label: 'EN' },
@@ -34,7 +35,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-gray-800">SchemeSaathi</span>
+            <span className="brand-mark" aria-hidden="true"><Shield size={29} strokeWidth={1.5} /></span>
+            <span className="brand-wordmark"><span>Scheme</span><strong>Saathi</strong></span>
           </Link>
 
           {/* Nav links */}

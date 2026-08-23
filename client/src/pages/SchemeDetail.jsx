@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { CheckCircle2, ExternalLink, FileText, Gift, ShieldCheck } from 'lucide-react';
 
 export default function SchemeDetail() {
   const { id } = useParams();
@@ -46,13 +47,13 @@ export default function SchemeDetail() {
 
         {/* Benefits */}
         <section className="mb-5">
-          <h2 className="text-base font-semibold text-gray-800 mb-2">🎁 {t('scheme.benefits')}</h2>
+          <h2 className="detail-heading text-base font-semibold text-gray-800 mb-2"><Gift size={16} /> {t('scheme.benefits')}</h2>
           <p className="text-sm text-gray-600">{scheme.benefits}</p>
         </section>
 
         {/* Eligibility */}
         <section className="mb-5">
-          <h2 className="text-base font-semibold text-gray-800 mb-2">✅ {t('scheme.eligibility')}</h2>
+          <h2 className="detail-heading text-base font-semibold text-gray-800 mb-2"><CheckCircle2 size={16} /> {t('scheme.eligibility')}</h2>
           <ul className="text-sm text-gray-600 space-y-1">
             <li>Age: {scheme.eligibility_age_min} – {scheme.eligibility_age_max === 999 ? 'No limit' : scheme.eligibility_age_max}</li>
             <li>Gender: {scheme.eligibility_gender}</li>
@@ -63,7 +64,7 @@ export default function SchemeDetail() {
 
         {/* Documents */}
         <section className="mb-8">
-          <h2 className="text-base font-semibold text-gray-800 mb-2">📄 {t('scheme.documents')}</h2>
+          <h2 className="detail-heading text-base font-semibold text-gray-800 mb-2"><FileText size={16} /> {t('scheme.documents')}</h2>
           <p className="text-sm text-gray-600">{scheme.documents_required}</p>
         </section>
 
@@ -75,7 +76,7 @@ export default function SchemeDetail() {
             rel="noopener noreferrer"
             className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-colors"
           >
-            {t('scheme.apply_now')} ↗
+            {t('scheme.apply_now')} <ExternalLink size={15} />
           </a>
           {user && (
             <button
@@ -83,7 +84,7 @@ export default function SchemeDetail() {
               disabled={saved}
               className={`px-6 py-2.5 rounded-lg font-medium text-sm border transition-colors ${saved ? 'border-green-300 text-green-600 bg-green-50' : 'border-orange-300 text-orange-500 hover:bg-orange-50'}`}
             >
-              {saved ? `✓ ${t('scheme.saved')}` : t('scheme.save')}
+              {saved ? <><CheckCircle2 size={15} /> {t('scheme.saved')}</> : <><ShieldCheck size={15} /> {t('scheme.save')}</>}
             </button>
           )}
         </div>

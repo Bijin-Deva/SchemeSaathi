@@ -1,10 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { CheckCircle2, FileText, Search, ShieldCheck } from 'lucide-react';
 
 const steps = [
-  { icon: '🔍', key: 'step1' },
-  { icon: '✅', key: 'step2' },
-  { icon: '📋', key: 'step3' },
+  { icon: Search, key: 'step1' },
+  { icon: CheckCircle2, key: 'step2' },
+  { icon: FileText, key: 'step3' },
 ];
 
 export default function About() {
@@ -34,7 +35,7 @@ export default function About() {
         <div className="about-steps-grid grid grid-cols-1 md:grid-cols-3 gap-6">
           {steps.map((step, i) => (
             <div key={step.key} className="about-step bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="about-step-icon text-4xl mb-3">{step.icon}</div>
+              <div className="about-step-icon feature-icon"><step.icon size={18} /></div>
               <div className="about-step-number text-orange-500 font-bold text-sm mb-1">Step {i + 1}</div>
               <h3 className="font-semibold text-gray-800 mb-2">{t(`about.${step.key}_title`)}</h3>
               <p className="text-sm text-gray-600">{t(`about.${step.key}_text`)}</p>
@@ -46,7 +47,7 @@ export default function About() {
       {/* Privacy Note */}
       <section className="about-privacy mb-10">
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-800 rounded-r-lg">
-          <strong>🔒 Data Privacy:</strong> {t('privacy_note')}
+          <strong><ShieldCheck size={15} /> Data Privacy:</strong> {t('privacy_note')}
         </div>
       </section>
     </div>
