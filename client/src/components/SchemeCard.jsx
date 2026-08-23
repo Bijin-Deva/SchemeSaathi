@@ -16,7 +16,7 @@ export default function SchemeCard({ scheme }) {
   const colorClass = categoryColors[scheme.category] || 'bg-gray-100 text-gray-800';
 
   return (
-    <div className="bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-shadow flex flex-col gap-3">
+    <div className="scheme-card bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-shadow flex flex-col gap-3">
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-semibold text-gray-900 text-base leading-snug">{scheme.name}</h3>
         <span className={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colorClass}`}>
