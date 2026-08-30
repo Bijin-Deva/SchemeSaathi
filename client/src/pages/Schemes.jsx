@@ -65,7 +65,7 @@ export default function Schemes() {
             <select
               value={searchParams.get(key) || ''}
               onChange={(e) => setFilter(key, e.target.value)}
-              className="w-full text-sm border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-orange-200"
+              className="w-full text-sm border border-[#E5E5E5] bg-white rounded-lg px-2.5 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]"
             >
               <option value="">All</option>
               {options.map((o) => <option key={o} value={o}>{o}</option>)}
@@ -75,7 +75,7 @@ export default function Schemes() {
 
         <button
           onClick={() => setSearchParams({})}
-          className="text-xs text-orange-500 hover:text-orange-600"
+          className="text-xs font-semibold text-[#0A0A0A] hover:opacity-70 transition-opacity"
         >
           Clear Filters
         </button>
@@ -92,9 +92,9 @@ export default function Schemes() {
             name="q"
             defaultValue={q}
             placeholder={t('scheme.search_placeholder')}
-            className="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200"
+            className="flex-1 border border-[#E5E5E5] bg-white rounded-full px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]"
           />
-          <button type="submit" className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm transition-colors">Search</button>
+          <button type="submit" className="bg-[#0A0A0A] hover:bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors shadow-sm">Search</button>
         </form>
 
         {loading ? (

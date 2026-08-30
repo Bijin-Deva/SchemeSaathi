@@ -35,34 +35,34 @@ export default function Register() {
         {error && <div className="bg-red-50 text-red-700 text-sm p-3 rounded-lg mb-4">{error}</div>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.name')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('auth.name')}</label>
             <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200" />
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.email')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('auth.email')}</label>
             <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200" />
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('auth.password')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('auth.password')}</label>
             <input type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} required minLength={6}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200" />
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]" />
           </div>
           <button type="submit" disabled={loading}
-            className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white py-2.5 rounded-lg font-medium text-sm transition-colors">
+            className="w-full bg-[#0A0A0A] hover:bg-black disabled:bg-gray-300 text-white py-2.5 rounded-full font-medium text-sm transition-colors shadow-sm">
             {loading ? t('common.loading') : t('auth.register_btn')}
           </button>
         </form>
 
         {/* Privacy Note */}
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 text-xs text-yellow-800 rounded-r-lg mt-5">
-          <ShieldCheck size={15} /> {t('privacy_note')}
+        <div className="bg-[#F3F3F3] border border-[#E5E5E5] p-3 text-xs text-[#0A0A0A] rounded-xl mt-5 flex items-center gap-2">
+          <ShieldCheck size={16} /> <span>{t('privacy_note')}</span>
         </div>
 
-        <p className="text-sm text-gray-500 text-center mt-4">
+        <p className="text-sm text-[#6B7280] text-center mt-4">
           {t('auth.have_account')}{' '}
-          <Link to="/login" className="text-orange-500 hover:text-orange-600 font-medium">{t('auth.login_link')}</Link>
+          <Link to="/login" className="text-[#0A0A0A] font-semibold hover:opacity-70">{t('auth.login_link')}</Link>
         </p>
       </div>
     </div>

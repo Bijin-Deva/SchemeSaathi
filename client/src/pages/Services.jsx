@@ -24,7 +24,7 @@ export default function Services() {
         {services.map((svc) => (
           <div
             key={svc.titleKey}
-            className={`bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition-shadow ${svc.path ? 'cursor-pointer' : ''}`}
+            className={`service-card shimmer-card feature-card shadow-md rounded-xl p-6 hover:shadow-lg transition-shadow ${svc.path ? 'cursor-pointer' : ''}`}
             onClick={() => svc.path && navigate(svc.path)}
           >
             <div className="feature-icon mb-4"><svc.icon size={18} /></div>

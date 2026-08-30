@@ -218,28 +218,28 @@ export default function BotWidget() {
           />
 
           {/* Header */}
-          <div className="bg-orange-500 px-4 py-3 flex items-center justify-between flex-shrink-0 select-none">
+          <div className="bg-[#0A0A0A] px-4 py-3 flex items-center justify-between flex-shrink-0 select-none border-b border-[#262626]">
             <div className="flex items-center gap-2">
               <span className="text-white font-semibold text-sm">{t('bot.title')}</span>
               {/* Resize hint */}
               <span
                 onMouseDown={onResizeMouseDown}
-                className="text-orange-200 text-xs cursor-nw-resize select-none"
+                className="text-gray-400 hover:text-white text-xs cursor-nw-resize select-none"
                 title="Drag to resize"
               ><Maximize2 size={14} /></span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-0.5 bg-orange-600 rounded px-1 py-0.5">
+              <div className="flex items-center gap-0.5 bg-[#262626] rounded-full px-1.5 py-0.5 border border-[#333333]">
                 {LANGUAGES.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => handleLangChange(lang.code)}
-                    className={`text-xs px-1.5 py-0.5 rounded transition-colors ${
+                    className={`text-xs px-2 py-0.5 rounded-full transition-colors ${
                       (botLang === 'Hindi' && lang.code === 'hi') ||
                       (botLang === 'Telugu' && lang.code === 'te') ||
                       (botLang === 'English' && lang.code === 'en')
-                        ? 'bg-white text-orange-500 font-semibold'
-                        : 'text-white hover:bg-orange-500'
+                        ? 'bg-white text-[#0A0A0A] font-semibold shadow-sm'
+                        : 'text-gray-400 hover:text-white'
                     }`}
                   >
                     {lang.label}
@@ -248,20 +248,20 @@ export default function BotWidget() {
               </div>
               <button
                 onClick={() => setOpen(false)}
-                className="text-white hover:text-orange-200 transition-colors text-lg leading-none"
+                className="text-white hover:text-gray-300 transition-colors text-lg leading-none p-1"
               ><X size={16} /></button>
             </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 min-h-0">
+          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3 min-h-0 bg-[#FAFAFA]">
             {messages.map((msg, i) => (
               <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div
-                  className={`max-w-[90%] text-sm px-3 py-2 rounded-2xl leading-relaxed ${
+                  className={`max-w-[90%] text-sm px-3.5 py-2.5 rounded-2xl leading-relaxed shadow-sm ${
                     msg.role === 'user'
-                      ? 'bg-orange-500 text-white rounded-br-sm'
-                      : 'bg-gray-100 text-gray-800 rounded-bl-sm'
+                      ? 'bg-[#0A0A0A] text-white rounded-br-sm'
+                      : 'bg-[#F3F3F3] text-[#0A0A0A] border border-[#E5E5E5] rounded-bl-sm'
                   }`}
                 >
                   {msg.role === 'assistant'
@@ -272,7 +272,7 @@ export default function BotWidget() {
             ))}
             {loading && (
               <div className="flex justify-start">
-                <div className="bg-gray-100 text-gray-500 text-sm px-3 py-2 rounded-2xl rounded-bl-sm">
+                <div className="bg-[#F3F3F3] border border-[#E5E5E5] text-[#6B7280] text-sm px-3.5 py-2 rounded-2xl rounded-bl-sm">
                   <span className="inline-flex gap-1">
                     <span className="animate-bounce" style={{ animationDelay: '0ms' }}>●</span>
                     <span className="animate-bounce" style={{ animationDelay: '150ms' }}>●</span>
@@ -285,28 +285,28 @@ export default function BotWidget() {
           </div>
 
           {/* Input */}
-          <div className="px-3 py-3 border-t border-gray-100 flex gap-2 flex-shrink-0">
+          <div className="px-3 py-3 border-t border-[#E8E8E8] bg-white flex gap-2 flex-shrink-0">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder={t('bot.placeholder')}
-              className="flex-1 text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-300"
+              className="flex-1 text-sm border border-[#E5E5E5] rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A0A0A] text-[#0A0A0A]"
             />
             <button
               onClick={handleSend}
               disabled={loading || !input.trim()}
-              className="bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white text-sm font-medium px-3 py-2 rounded-lg transition-colors"
+              className="bg-[#0A0A0A] hover:bg-black disabled:bg-gray-300 text-white text-sm font-medium px-4 py-2 rounded-full transition-colors shadow-sm"
             >
               {t('bot.send')}
             </button>
           </div>
 
           {/* Footer */}
-          <div className="px-4 py-2 bg-gray-50 border-t border-gray-100 text-center flex-shrink-0">
-            <p className="text-xs text-gray-500">{t('bot.powered_by')}</p>
-            <p className="text-xs text-gray-400">{t('bot.privacy')}</p>
+          <div className="px-4 py-2 bg-[#FAFAFA] border-t border-[#E8E8E8] text-center flex-shrink-0">
+            <p className="text-xs text-[#6B7280]">{t('bot.powered_by')}</p>
+            <p className="text-xs text-[#9CA3AF]">{t('bot.privacy')}</p>
           </div>
         </div>
       )}
@@ -314,7 +314,7 @@ export default function BotWidget() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="bot-toggle bg-orange-500 hover:bg-orange-600 text-white shadow-lg flex items-center justify-center transition-colors"
+        className="bot-toggle bg-[#0A0A0A] hover:bg-black text-white shadow-xl flex items-center justify-center transition-colors rounded-full w-12 h-12"
         aria-label="Open SchemeSaathi AI"
       >
         {open ? <X size={22} /> : <Bot size={22} />}

@@ -34,11 +34,11 @@ export default function About() {
         </div>
         <div className="about-steps-grid grid grid-cols-1 md:grid-cols-3 gap-6">
           {steps.map((step, i) => (
-            <div key={step.key} className="about-step bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="about-step-icon feature-icon"><step.icon size={18} /></div>
-              <div className="about-step-number text-orange-500 font-bold text-sm mb-1">Step {i + 1}</div>
-              <h3 className="font-semibold text-gray-800 mb-2">{t(`about.${step.key}_title`)}</h3>
-              <p className="text-sm text-gray-600">{t(`about.${step.key}_text`)}</p>
+            <div key={step.key} className="about-step bg-white rounded-2xl p-6 shadow-sm border border-[#E8E8E8]">
+              <div className="about-step-icon mb-3"><step.icon size={20} /></div>
+              <div className="about-step-number bg-[#0A0A0A] text-white font-bold text-xs px-2.5 py-1 rounded-md mb-2 inline-flex items-center justify-center">0{i + 1}</div>
+              <h3 className="font-semibold text-[#0A0A0A] text-base mb-2">{t(`about.${step.key}_title`)}</h3>
+              <p className="text-sm text-[#6B7280]">{t(`about.${step.key}_text`)}</p>
             </div>
           ))}
         </div>
@@ -46,8 +46,8 @@ export default function About() {
 
       {/* Privacy Note */}
       <section className="about-privacy mb-10">
-        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-800 rounded-r-lg">
-          <strong><ShieldCheck size={15} /> Data Privacy:</strong> {t('privacy_note')}
+        <div className="bg-[#F3F3F3] border border-[#E5E5E5] p-4 text-sm text-[#0A0A0A] rounded-xl flex items-center gap-2">
+          <strong><ShieldCheck size={16} /> Data Privacy:</strong> <span>{t('privacy_note')}</span>
         </div>
       </section>
     </div>
