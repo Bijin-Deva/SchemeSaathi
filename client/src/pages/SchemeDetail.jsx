@@ -31,30 +31,32 @@ export default function SchemeDetail() {
   if (loading) return <div className="text-center py-20 text-gray-400">{t('common.loading')}</div>;
   if (!scheme) return null;
 
+  const isAgriculture = scheme.category === 'Agriculture';
+
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <button onClick={() => navigate(-1)} className="text-sm text-orange-500 hover:text-orange-600 mb-6 flex items-center gap-1">
+    <div className="scheme-detail-container max-w-4xl mx-auto px-4 sm:px-6 py-4">
+      <button onClick={() => navigate(-1)} className="text-sm font-medium text-[#0A0A0A] hover:opacity-70 mb-2.5 flex items-center gap-1">
         ← {t('common.back')}
       </button>
 
-      <div className="bg-white rounded-2xl shadow-md p-8">
-        <div className="flex items-start justify-between gap-4 mb-4">
-          <h1 className="text-2xl font-bold text-gray-900">{scheme.name}</h1>
-          <span className="text-xs font-medium bg-orange-100 text-orange-700 px-3 py-1 rounded-full whitespace-nowrap">{scheme.category}</span>
+      <div className="scheme-detail-card bg-white rounded-2xl shadow-md p-8">
+        <div className="flex flex-col gap-2 mb-4">
+          <h1 className="scheme-detail-title text-3xl font-bold text-gray-900 leading-snug">{scheme.name}</h1>
+          <span className={`text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap self-start ${isAgriculture ? 'bg-green-100 text-green-800 border border-green-200' : 'bg-[#F3F3F3] text-[#0A0A0A] border border-[#E5E5E5]'}`}>{scheme.category}</span>
         </div>
         <p className="text-xs text-gray-500 mb-5">{scheme.state}</p>
-        <p className="text-gray-700 leading-relaxed mb-6">{scheme.description}</p>
+        <p className="text-base text-gray-700 leading-relaxed mb-6">{scheme.description}</p>
 
         {/* Benefits */}
         <section className="mb-5">
-          <h2 className="detail-heading text-base font-semibold text-gray-800 mb-2"><Gift size={16} /> {t('scheme.benefits')}</h2>
-          <p className="text-sm text-gray-600">{scheme.benefits}</p>
+          <h2 className="detail-heading text-xl font-semibold text-gray-800 mb-2"><Gift size={18} /> {t('scheme.benefits')}</h2>
+          <p className="text-base text-gray-600">{scheme.benefits}</p>
         </section>
 
         {/* Eligibility */}
         <section className="mb-5">
-          <h2 className="detail-heading text-base font-semibold text-gray-800 mb-2"><CheckCircle2 size={16} /> {t('scheme.eligibility')}</h2>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <h2 className="detail-heading text-xl font-semibold text-gray-800 mb-2"><CheckCircle2 size={18} /> {t('scheme.eligibility')}</h2>
+          <ul className="text-base text-gray-600 space-y-1">
             <li>Age: {scheme.eligibility_age_min} – {scheme.eligibility_age_max === 999 ? 'No limit' : scheme.eligibility_age_max}</li>
             <li>Gender: {scheme.eligibility_gender}</li>
             <li>Caste: {scheme.eligibility_caste}</li>
@@ -64,8 +66,8 @@ export default function SchemeDetail() {
 
         {/* Documents */}
         <section className="mb-8">
-          <h2 className="detail-heading text-base font-semibold text-gray-800 mb-2"><FileText size={16} /> {t('scheme.documents')}</h2>
-          <p className="text-sm text-gray-600">{scheme.documents_required}</p>
+          <h2 className="detail-heading text-xl font-semibold text-gray-800 mb-2"><FileText size={18} /> {t('scheme.documents')}</h2>
+          <p className="text-base text-gray-600">{scheme.documents_required}</p>
         </section>
 
         {/* Actions */}
@@ -74,7 +76,7 @@ export default function SchemeDetail() {
             href={scheme.apply_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-colors"
+            className="bg-[#0A0A0A] hover:bg-black text-white px-6 py-2.5 rounded-full font-medium text-sm transition-colors inline-flex items-center gap-1.5"
           >
             {t('scheme.apply_now')} <ExternalLink size={15} />
           </a>
@@ -82,7 +84,7 @@ export default function SchemeDetail() {
             <button
               onClick={handleSave}
               disabled={saved}
-              className={`px-6 py-2.5 rounded-lg font-medium text-sm border transition-colors ${saved ? 'border-green-300 text-green-600 bg-green-50' : 'border-orange-300 text-orange-500 hover:bg-orange-50'}`}
+              className={`px-6 py-2.5 rounded-full font-medium text-sm border transition-colors inline-flex items-center gap-1.5 ${saved ? 'border-[#E5E5E5] text-[#0A0A0A] bg-[#F3F3F3]' : 'border-[#E5E5E5] text-[#0A0A0A] bg-white hover:bg-[#F3F3F3]'}`}
             >
               {saved ? <><CheckCircle2 size={15} /> {t('scheme.saved')}</> : <><ShieldCheck size={15} /> {t('scheme.save')}</>}
             </button>

@@ -49,56 +49,56 @@ export default function EligibilityChecker() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Privacy banner */}
-      <div className="privacy-banner bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-800 rounded-r-lg mb-6">
-        <ShieldCheck size={16} /> {t('eligibility.privacy_banner')}
+      <div className="privacy-banner bg-[#F3F3F3] border border-[#E5E5E5] p-4 text-sm text-[#0A0A0A] rounded-xl mb-6 flex items-center gap-2">
+        <ShieldCheck size={18} /> <span>{t('eligibility.privacy_banner')}</span>
       </div>
 
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">{t('eligibility.title')}</h1>
+      <h1 className="text-2xl font-bold text-[#0A0A0A] mb-6">{t('eligibility.title')}</h1>
 
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+      <div className="bg-white rounded-2xl shadow-sm border border-[#E8E8E8] p-6 mb-8">
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('eligibility.age')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('eligibility.age')}</label>
             <input type="number" name="age" value={form.age} onChange={handleChange} min="0" max="120"
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200" />
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('eligibility.gender')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('eligibility.gender')}</label>
             <select name="gender" value={form.gender} onChange={handleChange}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200">
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]">
               <option value="">Select</option>
               {GENDERS.map((g) => <option key={g} value={g}>{g}</option>)}
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('eligibility.state')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('eligibility.state')}</label>
             <select name="state" value={form.state} onChange={handleChange}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200">
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]">
               <option value="">Select</option>
               {STATES.map((s) => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('eligibility.income')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('eligibility.income')}</label>
             <input type="number" name="income" value={form.income} onChange={handleChange} min="0"
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200" />
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('eligibility.occupation')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('eligibility.occupation')}</label>
             <input type="text" name="occupation" value={form.occupation} onChange={handleChange}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200" />
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">{t('eligibility.caste')}</label>
+            <label className="block text-sm font-medium text-[#0A0A0A] mb-1">{t('eligibility.caste')}</label>
             <select name="caste" value={form.caste} onChange={handleChange}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-200">
+              className="w-full border border-[#E5E5E5] bg-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A0A0A]">
               <option value="">Select</option>
               {CASTES.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
           <div className="md:col-span-2">
             <button type="submit" disabled={loading}
-              className="bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white px-8 py-2.5 rounded-lg font-medium text-sm transition-colors">
+              className="bg-[#0A0A0A] hover:bg-black disabled:bg-gray-300 text-white px-8 py-2.5 rounded-full font-medium text-sm transition-colors shadow-sm">
               {loading ? t('common.loading') : t('eligibility.submit')}
             </button>
           </div>

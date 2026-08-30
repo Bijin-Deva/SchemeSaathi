@@ -6,34 +6,29 @@ export default function SchemeCard({ scheme }) {
   const { t } = useTranslation();
 
   const categoryColors = {
-    Agriculture: 'bg-green-100 text-green-800',
-    Education: 'bg-blue-100 text-blue-800',
-    Health: 'bg-red-100 text-red-800',
-    Housing: 'bg-yellow-100 text-yellow-800',
-    Employment: 'bg-purple-100 text-purple-800',
-    'Women Empowerment': 'bg-pink-100 text-pink-800',
+    Agriculture: 'bg-green-100 text-green-800 border border-green-200',
   };
-  const colorClass = categoryColors[scheme.category] || 'bg-gray-100 text-gray-800';
+  const colorClass = categoryColors[scheme.category] || 'bg-[#F3F3F3] text-[#0A0A0A] border border-[#E5E5E5]';
 
   return (
-    <div className="scheme-card bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-shadow flex flex-col gap-3">
-      <div className="flex items-start justify-between gap-2">
-        <h3 className="font-semibold text-gray-900 text-base leading-snug">{scheme.name}</h3>
-        <span className={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colorClass}`}>
+    <div className="scheme-card recommended-card shimmer-card bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-shadow flex flex-col gap-3">
+      <div className="flex flex-col gap-2">
+        <h3 className="font-semibold text-gray-900 text-base leading-normal">{scheme.name}</h3>
+        <span className={`text-xs font-medium px-2.5 py-1 rounded-full whitespace-nowrap self-start ${colorClass}`}>
           {scheme.category}
         </span>
       </div>
       <p className="text-sm text-gray-600 line-clamp-3">{scheme.description}</p>
-      <div className="flex items-center justify-between mt-auto pt-2 border-t border-gray-100">
+      <div className="flex items-center justify-between mt-auto pt-2 border-t border-[#E8E8E8]">
         <span className="text-xs text-gray-500">{scheme.state}</span>
         {scheme.matchScore !== undefined && (
-          <span className="text-xs font-medium bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">
+          <span className="text-xs font-medium bg-[#F3F3F3] text-[#0A0A0A] border border-[#E5E5E5] px-2.5 py-0.5 rounded-full">
             {t('eligibility.match_score')}: {scheme.matchScore}
           </span>
         )}
         <Link
           to={`/schemes/${scheme.id}`}
-          className="text-sm font-medium text-orange-500 hover:text-orange-600 transition-colors"
+          className="text-sm font-semibold text-[#0A0A0A] hover:opacity-70 transition-opacity"
         >
           {t('common.view_details')} →
         </Link>
